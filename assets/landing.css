@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #07091a, #1a0a33, #000000);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glowing Blobs */
+.glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+    animation: drift 10s infinite alternate ease-in-out;
+}
+
+.blob1 {
+    width: 350px;
+    height: 350px;
+    background: #6a11cb;
+    top: 5%;
+    left: 15%;
+}
+
+.blob2 {
+    width: 450px;
+    height: 450px;
+    background: #ff416c;
+    bottom: -5%;
+    right: 10%;
+}
+
+@keyframes drift {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(50px) scale(1.1); }
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: float 6s infinite ease-in-out alternate;
+}
+
+.i1 { top: 25%; left: 15%; animation-delay: 0s; font-size: 2.2rem; }
+.i2 { top: 35%; right: 20%; animation-delay: 1.5s; font-size: 2.8rem; }
+.i3 { bottom: 35%; left: 20%; animation-delay: 2.5s; font-size: 2.5rem; }
+.i4 { bottom: 25%; right: 15%; animation-delay: 0.5s; font-size: 2rem;}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-30px) rotate(15deg); }
+}
+
+/* Fade In Animation */
+.fade-in-container {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 6%;
+    z-index: 10;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #d475ff, #ff7eb3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+
+.nav-btn:hover {
+    color: #ff7eb3;
+}
+
+.signup-btn {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 24px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.music-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s, opacity 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.music-btn:hover {
+    color: white;
+    opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+    margin-top: -5vh; /* Slight adjustment to true center */
+}
+
+.hero-title {
+    font-size: clamp(50px, 8vw, 75px);
+    font-weight: 700;
+    background: linear-gradient(to right, #cf71ff, #ff4e96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(194, 100, 255, 0.3);
+    line-height: 1.2;
+}
+
+.hero-tagline {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2.5px;
+    margin-bottom: 3.5rem;
+    max-width: 650px;
+}
+
+/* Get Started Button */
+.get-started-btn {
+    text-decoration: none;
+    background: linear-gradient(45deg, #6a11cb, #ff416c);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 16px 45px;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(255, 65, 108, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.get-started-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+}
+
+.get-started-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255, 65, 108, 0.6);
+}
+
+.get-started-btn:hover::after {
+    left: 200%;
+}
+
+/* Scroll Hint */
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    animation: bounce 2.5s infinite;
+}
+
+.scroll-hint span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    color: rgba(255,255,255,0.7);
+}
+
+.scroll-hint .arrow {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-12px) translateX(-50%); }
+    60% { transform: translateY(-6px) translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1.5rem 5%;
+    }
+    .nav-links {
+        gap: 1.2rem;
+    }
+    .nav-btn {
+        font-size: 0.9rem;
+    }
+    .music-btn {
+        display: none; /* Hide on small screens to save space */
+    }
+    .get-started-btn {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+    }
+}
